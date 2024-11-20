@@ -27,4 +27,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: p4blodoubleg/tu-imagen-docker:latest
+          tags: p4blodoubleg/build-push-action-project:latest
+
