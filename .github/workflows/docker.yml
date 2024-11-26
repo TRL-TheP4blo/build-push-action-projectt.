@@ -14,6 +14,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      # Instala dependencias (ejemplo con Node.js)
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      # Ejecuta pruebas unitarias
+      - name: Run unit tests
+        run: npm test
+
       # Inicia sesión en DockerHub
       - name: Log in to DockerHub
         uses: docker/login-action@v2
@@ -28,4 +41,3 @@ jobs:
           context: .
           push: true
           tags: p4blodoubleg/build-push-action-project:latest
-
